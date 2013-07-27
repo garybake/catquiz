@@ -1,0 +1,22 @@
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.garybake.catquiz"
+        version   = "1">
+
+    <name>Cat Quiz</name>
+
+    <description>
+        Play this feline themed Cat Quiz on your phone or tablet and answer 10 Cat related questions to finally reach the million pound question .. but be careful, one wrong answer and you might need to start over.
+        Up the cats!
+    </description>
+
+    <author href="http://garybake.com" email="garybake@gmail.com">
+        Gary Bake
+    </author>
+<preference name="orientation" value="portrait" />
+
+<icon src="icon_57.png" width="57" height="57" />
+<icon src="icon_72.png" width="72" height="72" />
+<icon src="icon_114.png" width="114" height="114" />
+<icon src="icon_144.png" width="144" height="144" />
+</widget>
