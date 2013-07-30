@@ -53,9 +53,9 @@ function sizeStuff()
     var subject_padding = Math.round(w_height/80);
     var line_height = Math.round(subject_height/2);
 
-    $(".button").css("height",subject_height);
-    $(".button").css("margin",subject_padding);
-    $(".button").css("line-height",($(".button").css("height")));
+    $(".cat-button").css("height",subject_height);
+    $(".cat-button").css("margin",subject_padding);
+    $(".cat-button").css("line-height",($(".cat-button").css("height")));
 
     var bottom_height = Math.round(w_height/8);
     $(".menudiv").css("height",bottom_height);

@@ -24,7 +24,7 @@ function createMainMenu()
     guaranteedWinnings = 0;
     level = 0;
     var mainmenuHTML;
-    mainmenuHTML="<p /><br /><br /><div class=\"menubutton\" onclick=\"startQuiz()\">Play Game</div><div class=\"menubutton\" onclick=\"upgrade()\">How To Play</div><div class=\"menubutton\" onclick=\"getHighScores()\">Your Best Score</div>";
+    mainmenuHTML="<p /><br /><br /><div class=\"menubutton pure-button\" onclick=\"startQuiz()\">Play Game</div><div class=\"menubutton pure-button\" onclick=\"upgrade()\">How To Play</div><div class=\"menubutton pure-button\" onclick=\"getHighScores()\">Your Best Score</div>";
     document.getElementById('questionsdiv').innerHTML=mainmenuHTML;
     sizeStuff();
 }
@@ -86,13 +86,13 @@ function generateQuiz()
         var classNo = Math.floor(j/2);
         if (j%2==0)
             returnHTML = returnHTML + "<tr>";
-        returnHTML = returnHTML + "<td width=50%><div class=\"button "+classes[classNo]+visibility+"\" id=\"button"+j+"\" onclick=\"showQuestion("+j+")\">"+category[selectedQid]+"</div></td>";
+        returnHTML = returnHTML + "<td width=50%><div class=\""+classes[classNo]+visibility+" cat-button pure-button\" id=\"button"+j+"\" onclick=\"showQuestion("+j+")\">"+category[selectedQid]+"</div></td>";
         if (j%2==1)
             returnHTML = returnHTML + "</tr>";
     }
     returnHTML = returnHTML + "</table>";
     document.getElementById('questionsdiv').innerHTML = returnHTML;
-    document.getElementById('gamenav').innerHTML = "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\"><tr><td width=\"37%\" class=\"menudiv\"><center>YOUR WINNINGS:<br /><div id=\"winnings\">£"+totalWinnings+"</font></div></center></td><td width=\"37%\" class=\"menudiv\"><center>GUARANTEED:<br /><div id=\"winnings\">£"+guaranteedWinnings+"</font></div></center></td><td width=\"26%\" id=\"dropoutdiv\" class=\"menudiv\" style=\"cursor: pointer;\" onclick=\"dropOut()\"><center><img src=\"exit.gif\" height=\"30\" /><br />DROP OUT</center></td></tr></table></div>";
+    document.getElementById('gamenav').innerHTML = "<table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\"><tr><td width=\"37%\" class=\"menudiv\"><center>YOUR WINNINGS:<br /><div id=\"winnings\">£"+totalWinnings+"</font></div></center></td><td width=\"37%\" class=\"menudiv\"><center>GUARANTEED:<br /><div id=\"winnings\">£"+guaranteedWinnings+"</font></div></center></td><td width=\"26%\" id=\"dropoutdiv\" class=\"menudiv\" style=\"cursor: pointer;\" onclick=\"dropOut()\"><center><img src=\"resources/images/exit.gif\" height=\"30\" /><br />DROP OUT</center></td></tr></table></div>";
     sizeStuff();
 }
 
@@ -104,7 +104,7 @@ function showQuestion(elementNo)
     var k=0;
     for (k=0;k<4;k++)
     {
-        returnHTML = returnHTML + "<div class=\"answerbutton\" id=\"answer"+k+"\" onClick=\"answerQuestion("+elementNo+","+k+")\">"+answers[questionNo][k]+"</div>";
+        returnHTML = returnHTML + "<div class=\"answerbutton pure-button\" id=\"answer"+k+"\" onClick=\"answerQuestion("+elementNo+","+k+")\">"+answers[questionNo][k]+"</div>";
     }
     document.getElementById('questionsdiv').innerHTML=returnHTML;
     sizeStuff();
@@ -184,7 +184,8 @@ function answerQuestion(elementNo,answerNo)
     else
     {
         var wrongDiv = "answer" + answerNo;
-        document.getElementById(wrongDiv).className = "wronganswerbutton";
+        // document.getElementById(wrongDiv).className = "wronganswerbutton pure-button";
+        $("#"+wrongDiv).fadeTo(1,0.5);
         blinkButton(correctDiv);
 
         var winningsInt = parseInt(guaranteedWinnings.toString().replace(/,/g,''));
@@ -198,20 +199,28 @@ function answerQuestion(elementNo,answerNo)
 
 function blinkButton(buttonId)
 {
-    if (blinksLeft>0)
-    {
-        var className = document.getElementById(buttonId).className;
-        if (className=="answerbutton")
-        {
-            document.getElementById(buttonId).className="correctanswerbutton";
-        }
-        else if (className=="correctanswerbutton")
-        {
-            document.getElementById(buttonId).className="answerbutton";
-        }
-        blinksLeft--;
-        window.setTimeout(blinkButton,500,buttonId);
-    }
+    $("#"+buttonId).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200);
+    // var w_width = $(window).outerWidth();
+    // var w_height = $(window).outerHeight();
+    // var answer_padding = Math.round(w_height/55);
+    // var answer_margin = Math.round(w_height/30);
+    // if (blinksLeft>0)
+    // {
+    //     var className = document.getElementById(buttonId).className;
+    //     if (className=="answerbutton pure-button")
+    //     {
+    //         document.getElementById(buttonId).className="correctanswerbutton pure-button";
+    //         $("#someElement").fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100);
+    //     }
+    //     else if (className=="correctanswerbutton pure-button")
+    //     {
+    //         document.getElementById(buttonId).className="answerbutton pure-button";
+    //         $(".answerbutton").css("padding",answer_padding);
+    //         $(".answerbutton").css("margin",answer_margin);
+    //     }
+    //     blinksLeft--;
+    //     window.setTimeout(blinkButton,500,buttonId);
+    // }
 }
 
 function updateWinnings()
