@@ -49,7 +49,7 @@ function sizeStuff()
     $(".mainimage").css("height",image_height);
     $(".mainimage").css("width",w_width);
 
-    var subject_height = Math.round(w_height/11);
+    var subject_height = Math.round(w_height/15);
     var subject_padding = Math.round(w_height/80);
     var line_height = Math.round(subject_height/2);
 

@@ -1,10 +1,8 @@
 .cooldivbro {
-    background-color:#e8e8e8; width: 100%; height:100%; padding-top: 0px;
-    /*background: url('../images/pinkfluff.jpg') no-repeat center center fixed; */
-/*    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;*/
+    background-color:#e8e8e8; 
+    width: 100%; 
+    height:100%; 
+    padding-top: 0px;
 }
 
 .menubutton {
@@ -12,7 +10,7 @@
     color: white;
     border-radius: 10px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    font-size: 200%%;
+    font-size: 300%;
     display: block;
 }
 
@@ -21,7 +19,7 @@
     color: white;
     border-radius: 10px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    font-size: 150%%;
+    font-size: 300%%;
     display: block;
 }
 
@@ -30,7 +28,7 @@
     color: white;
     border-radius: 10px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    font-size: 150%%;
+    font-size: 300%%;
     display: block;
 }
 
@@ -39,7 +37,7 @@
     color: white;
     border-radius: 10px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    font-size: 150%%;
+    font-size: 300%%;
     display: block;
 }
 
@@ -48,7 +46,7 @@
     color: white;
     border-radius: 10px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    font-size: 150%%;
+    font-size: 300%%;
     display: block;
 }
 
@@ -57,7 +55,7 @@
     color: white;
     border-radius: 10px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    font-size: 150%%;
+    font-size: 300%%;
     display: block;
 }
 
@@ -66,7 +64,7 @@
     color: white;
     border-radius: 10px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    font-size: 200%;
+    font-size: 300%;
     display: block;
 }
 
@@ -89,10 +87,11 @@
 .menudiv {
     background-color: #7AC5CD;
     color: black;
+    font-size: 200%;
 }
 
 .question {
-    font-size: 120%%;
+    font-size: 300%;
     font-weight: bold;
     font-family: "proxima-nova",sans-serif;
     padding:10px;
@@ -101,8 +100,20 @@
 
 #rulesofthegame {
     border:1px solid #000;
-    box-shadow:0px 0px 20px #000;
+    /*box-shadow:0px 0px 20px #000;*/
     text-align:left;
     border-radius:20px;
     font-weight: normal;
+    font-size: 200%;
+}
+
+.invisible {
+    visibility:hidden;
+}
+
+#gamenav {
+    position: absolute; 
+    bottom: 0px; 
+    width:100%; 
+    display: none;
 }
