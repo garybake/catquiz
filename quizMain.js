@@ -14,7 +14,7 @@ var selectedQuestions;
 
 function upgrade()
 {
-    document.getElementById('questionsdiv').innerHTML = "<center><div id='rulesofthegame'><center><b><span style='font-size:15pt'>How to Play</span></b></center><p />- Each correct answer wins you money.                <br />- If you make £25,000 - that money becomes guaranteed. Otherwise, you lose everything with one wrong answer.<br />- You can drop out at any time to keep your earnings.<br />- If you answer all questions, you will win one million pounds.<p/>Good luck with the Million Pound Cat Quiz!</div><div class=\"menubutton\" style=\"width:200px;\" onClick=\"createMainMenu()\">Play Now!</div></center>";
+    document.getElementById('questionsdiv').innerHTML = "<center><div id='rulesofthegame'><center><b><span>How to Play</span></b></center><p />- Each correct answer wins you money.                <br />- If you make £25,000 - that money becomes guaranteed. Otherwise, you lose everything with one wrong answer.<br />- You can drop out at any time to keep your earnings.<br />- If you answer all questions, you will win one million pounds.<p/>Good luck with the Million Pound Cat Quiz!</div><div class=\"menubutton\" style=\"width:200px;\" onClick=\"createMainMenu()\">Play Now!</div></center>";
     sizeStuff();
 }
 
@@ -44,7 +44,7 @@ function leaveQuiz()
 {
     blinksLeft=7;
     document.getElementById('gamenav').style.display = "none";
-    document.getElementById('questionsdiv').innerHTML="<p /><p /><br /><p /><br /><p /><br />You leave the game with total winnings of:<p /><div class=\"leavebutton\">£"+guaranteedWinnings+"</div>"
+    document.getElementById('questionsdiv').innerHTML="<p /><p /><br /><p /><br /><p /><br />You leave the game with total winnings of:<p /><div class=\"green pure-button\">£"+guaranteedWinnings+"</div>"
     document.getElementById('gamenav').innerHTML="";
     setTimeout(createMainMenu,4000);
 }
@@ -130,7 +130,7 @@ function donothing()
 
 function getHighScores()
 {
-    var highscoreHTML="<p /><p /><br /><p /><br /><p /><br /><br />Your Best Score is:<p /><div class=\"leavebutton\">£";
+    var highscoreHTML="<p /><p /><br /><p /><br /><p /><br /><br />Your Best Score is:<p /><div class=\"green pure-button\">£";
     db.transaction(function (tx)
     {
         tx.executeSql('SELECT * FROM highscores3 ORDER BY score desc LIMIT 0,5', [], function (tx, results) {

@@ -3,22 +3,22 @@ var answers=new Array();
 var category=new Array();
 var correct=new Array();
 
-questions[0]="How old was the oldest cat";
+questions[0]="How old was the oldest cat?";
 answers[0]=new Array("29","32","38","40");
 correct[0]=3;
 category[0]="Amazeballs";
 
-questions[1]="How heavy was the worlds fattest";
+questions[1]="How heavy was the worlds fattest cat?";
 answers[1]=new Array("20Kg","21Kg","30Kg","31Kg");
 correct[1]=1;
 category[1]="Amazeballs";
 
-questions[2]="A commemorative tower was built in Scotland for a cat who caught nearly 30,000 mice. What was her name";
+questions[2]="A commemorative tower was built in Scotland for a cat who caught nearly 30,000 mice. What was her name?";
 answers[2]=new Array("Towser","Miss McFluffy","Mouser","Stink");
 correct[2]=0;
 category[2]="Historical";
 
-questions[3]="What was Hermione's cat called in Harry Potter";
+questions[3]="What was Hermione's cat called in Harry Potter?";
 answers[3]=new Array("Crookshanks","Snowy","Mrs. Norris","Ron");
 correct[3]=0;
 category[3]="Famous Cats";
